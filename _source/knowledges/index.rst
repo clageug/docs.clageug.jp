@@ -3,5 +3,7 @@
 
 
 .. toctree::
-  :maxdepth: 3
-  :caption: Knowledges - ナレッジ
+   :maxdepth: 3
+   :caption: Knowledges - ナレッジ
+
+   docs/reStructuredtext-code-terms-and-conditions
