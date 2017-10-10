@@ -14,8 +14,8 @@
 <head>
   <meta charset="utf-8">
   {{ metatags }}
-  {%- block GoogleAnalytics %} {% endblock %}
-  {%- block OGPTags %} {% endblock %}
+  {%- block GoogleAnalytics %}{% endblock %}
+  {%- block OGPTags %}{% endblock %}
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {% block htmltitle %}
   <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
@@ -83,7 +83,7 @@
 
   {# Keep modernizr in head - http://modernizr.com/docs/#installing #}
   <script src="{{ pathto('_static/js/modernizr.min.js', 1) }}"></script>
-
+  {%- block Clingify %}{% endblock %}
 </head>
 
 <body class="wy-body-for-nav" role="document">
