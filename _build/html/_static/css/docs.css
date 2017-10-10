@@ -1,0 +1,104 @@
+@charset "utf-8";
+/*
+ * docs.css
+ *
+ * See, Sphinx theme for read the docs
+ * https://github.com/rtfd/sphinx_rtd_theme
+ * http://docs.readthedocs.io/en/latest/
+ */
+@import url("theme.css");
+
+/* サイドバーの検索エリアと Nav Top バーの背景色 */
+.wy-nav-top,
+.wy-side-nav-search {
+  background-color: #0a4aac;
+}
+
+/* サイドバーのキャプション */
+.wy-menu-vertical p.caption {
+  color: #FFFFFF;
+}
+
+/* ロゴ */
+.wy-side-nav-search > a.icon img.logo,
+.wy-side-nav-search .wy-dropdown > a.icon img.logo {
+  margin-top: 0;
+  width: 240px;
+}
+
+/* ロゴのリンクエリア */
+.wy-side-nav-search > a,
+.wy-side-nav-search .wy-dropdown > a {
+  width: 100%;
+}
+
+/* 検索のコントロール */
+.wy-side-nav-search input[type=text] {
+  border-color: #031e54;
+}
+
+/* コンテント領域 */
+.wy-nav-content {
+  max-width: 1200px;
+}
+
+.wy-breadcrumbs {
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.wy-breadcrumbs-aside {
+  margin-top: .5rem;
+}
+
+/* コンテント領域内のサイドバー */
+.rst-content .sidebar {
+  background: #f3f3f3;
+  border-color: #e4e4e4;
+  float: none;
+  width: 100%;
+  margin-left: 0;
+}
+
+.rst-content .sidebar .sidebar-title {
+  background: #e4e4e4;
+}
+
+.rst-content .sidebar .last {
+  margin-bottom: -24px;
+}
+
+/* コンテント領域内のフッタ */
+.wy-nav-content .rst-content > footer {
+  padding-bottom: 1.618em;
+}
+
+@media screen and (max-width: 768px) {
+  .wy-breadcrumbs-aside {
+    margin-top: 8px;
+  }
+
+  .wy-nav-side.shift {
+    box-shadow: 10px 0px 40px 0px rgba(0, 0, 0, .3);
+  }
+}
+
+@media screen and (max-width: 1200px) {}
+
+@media screen and (min-width: 1400px) {
+  .wy-nav-content {
+     max-width: 900px;
+  }
+
+  .rst-content .sidebar {
+    position: absolute;
+    left: 1200px;
+    width: auto;
+    top: 0;
+    right: 0;
+    margin: 0;
+    background: none;
+    border: 0px none;
+  }
+}
