@@ -58,7 +58,7 @@ def get_og_tags(context, doctree, config):
     og_desc = visitor.get_og_description()
 
     # og:image
-    og_image = visitor.get_og_image_url(page_url)
+    og_image = visitor.get_og_image_url(site_url)
 
     ## OGP
     tags = '''
