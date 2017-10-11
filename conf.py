@@ -376,7 +376,7 @@ extensions = [
     'ogtag',
 ]
 
-og_site_url = 'https://docs.clage.jp/'
+og_site_url = 'https://docs.clageug.jp/'
 og_twitter_site = '@FoxBoxsnet'
 
 def setup(app):
