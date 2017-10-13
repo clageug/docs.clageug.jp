@@ -47,7 +47,7 @@ class Visitor:
 
 def get_og_tags(context, doctree, config):
     # page_url
-    site_url = config['og_site_url']
+    site_url = config['site_url']
     page_url = urljoin(site_url, context['pagename'] + context['file_suffix'])
 
     # collection
@@ -80,7 +80,7 @@ def html_page_context(app, pagename, templatename, context, doctree):
     context['metatags'] += get_og_tags(context, doctree, app.config)
 
 def setup(app):
-    app.add_config_value('og_site_url', None, 'html')
+    app.add_config_value('site_url', None, 'html')
     app.add_config_value('og_twitter_site', None, 'html')
     app.connect('html-page-context', html_page_context)
     return {

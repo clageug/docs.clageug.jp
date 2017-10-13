@@ -25,9 +25,9 @@ def setup(app):
 
 def add_html_link(app, pagename, templatename, context, doctree):
     """As each page is built, collect page names for the sitemap"""
-    base_url = 'http://my-site.com/docs/'
-    if base_url:
-        app.sitemap_links.append(base_url + pagename + ".html")
+    site_url = 'http://my-site.com/docs/'
+    if site_url:
+        app.sitemap_links.append(site_url + pagename + ".html")
 
 
 def create_sitemap(app, exception):
