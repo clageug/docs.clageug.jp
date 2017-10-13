@@ -16,7 +16,6 @@ deploy:
   secret_access_key:
     secure: Qczp4IBByA5F/F301SIFx3Gx/5dU4e6ox6FFCRVbNsD+YTuaP/bvkq+l23VjeH8oFGyuTrZZLq/agtBRoXtZLhW6njB2DUHbEJZXd1RMH33QZsKBr/x764D74cxHd/eeE3TpMS7+6wsazA1rdKUAAqMeqYH0V9cMZYcXFde8/D+IT+TYAPiUufvJ8dhpsR+iCnrDyxOyP/sWOnJ56mUxxjKycZnKsluaqwel+B2/o8H1WJKWcq2qhnQv1vdgqSCEnrqUzGn8Nt2S4qCqQehcJ4qMOJBGRBN37h8vsn9OCrI5HUc22txdOju2ojzWTiPXbcLx2r42NI1+/KE8FxjlimdVRaNVgf6nIbDeRDCqky0efmNsQNYuqAF9ArM7pS+XdChEUjkCji/Y9Pqeusl8hgV0EJoaEfxEBnpxTKcFdV+DSMVL+ExuCuFkwOWbmAG+9BffkzE6YuQTK2SRi0I79TRymRpKgZXyT4/HrRG46woJTzTQY0CXofByjjs5s8Pl8BtuUhAynq8F4lQ83I6wnvD5knuZve056V2T6a3ZkkmXXDXbnqmZOJDPP9gLS57KtayzqW1jzwI/nTxcLC/HKpy+Uk0VTfQuTuPKZ+OK5LDYPYQBQuGe4QihTDswzLkpgQWrML96V/8AgItmGx3b621WD7I/JfOFyGPzlxMPUDs=
   bucket: docs.clageug.jp
-  endpoint: docs.clageug.jp.s3-website-ap-northeast-1.amazonaws.com
   region: ap-northeast-1
   local-dir: _build/html/
   upload-dir: /
