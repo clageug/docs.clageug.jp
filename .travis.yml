@@ -17,6 +17,5 @@ deploy:
   bucket: "docs.clageug.jp"
   skip_cleanup: true
   region: ap-northeast-1
-  local-dir: _build/html/
-  upload-dir: /
+  local-dir: ./_build/html
 
