@@ -374,6 +374,7 @@ intersphinx_mapping = {'https://docs.python.org/': None}
 sys.path.append(os.path.abspath('_ext'))
 extensions = [
     'ogtag',
+    'sphinx_sitemap',
 ]
 
 og_site_url = 'https://docs.clageug.jp/'
