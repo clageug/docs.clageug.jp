@@ -3,7 +3,7 @@ python:
   - '3.6'
 
 before_install:
-  - pip install awscli --upgrade --user
+  - pip install awscli
   - export PATH=$PATH:$HOME/.local/bin
 
 install:
