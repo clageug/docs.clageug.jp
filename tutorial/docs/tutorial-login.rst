@@ -9,4 +9,8 @@
 
 
 CloudGarage ログインします。
-aaa
+
+ログインURLは https://id.cloudgarage.jp/ です
+
+.. image:: ../img/tutorial-login_001.png
+
