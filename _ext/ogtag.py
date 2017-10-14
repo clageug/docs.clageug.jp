@@ -43,7 +43,7 @@ class Visitor:
 
     def get_og_image_url(self, page_url):
         # TODO: 必ず最初の画像で良いのか
-        return urljoin(page_url, '_static/images/logo-white.svg')
+        return urljoin(page_url, '_static/images/logo.svg')
 
 def get_og_tags(context, doctree, config):
     # page_url
