@@ -2,6 +2,10 @@ language: python
 python:
   - '3.6'
 
+before_install:
+  - pip install --user awscli
+  - export PATH=$PATH:$HOME/.local/bin
+
 install:
   - pip install -q -r requirements.txt
 
@@ -10,11 +14,13 @@ script:
 
 deploy:
   provider: s3
-  access_key_id:
-    secure: "P5jy/qwQccZgQX/VhwRTRbeCVYlurb+tQeogX3tupUMLwJYgCnlnhsE68HE9bXCPkmJWXfGf+4EOPj8ZHPRqQwTMqKFmjHM4YX/ZBU2vtxpVL3iqZlZZYSC8s3/B5ACB3A9yZFmR8v6cMlaLVCuj7IWnRAJ/9CqdXm7izHVC6nSSXUY7anW1DQ5+M7JMUNLhg0ifALcyBXuYH3myu4LqUWwrzPTf3AC7oKqnL+IuEUOgPR5cLMKdH+emPY1A4WwBKYLtxCze5oKkY49DSO/gd0A0BcGpvQHkZPecQbzvfGl52qWh0Xe8HB0nrE32tnttXoLrwsGz3iKIZR32M7k30lwjxYdjBoo73C0oDeEOtFzXU2BjYL2Niu7Kz47+KYGUxfZqIjNmgJQeCjZ/TRtRBJcswXAKij89PiUoFXj58ubRDs8TfvtTyabDujsM8xwLmnawEd6cOM+dfKDNPtSeS/raY55oFJIAGQUAaoj2BO30QgHTv5CPRAjo9yC+LnM0EbVzC8wVDamd5+DS7DEXlTjrkF4tVC7f5lrXMCFzlw2Qt34DiUeS3xbxG9S+yJX+IJn0WbURAQfKShGksFdiOECGsYZf89IdR/aNMbgxxCxSFLs0alUKR4qvJOFKMlR5DpqOMNrF8CfRO3cPq+yJ8c44ToHKghS4+EKiTpHyDN4="
-  secret_access_key:
-    secure: "iLfj8L7ejM+Tx0hPdJ4HVZgA/y4JOr9SZeN5z0RnFEdIICjC99KWaA7NljM9vSieWK4DLCvJFsLfkInmtR0g8E0scSkCCH11gtz1DA/2SurgELjtAsV2q1VUF+cqL6PDekRLucBmF6opww0c8bGUzns3cMwe8bHz17xtr21Q6KfpXQj2ARI9n+Ib5+FpetBj2Tci+HqskghJkgsvzzEuvqT7RgfSwcZuABjY2Ei/qVjvfk52JvdRrIs9ulfw4vHI6J1cURwIFPP1mzajK3UNc8pUgVvxt3hlFBMChpRaFILIvv8Px3NUBZvTYqkjsd9RQcAs2EUu+P7hGTJIZ7IAf1bpgeBd53Mz/5gVlFgnFj7z/DepdwRkaUUZcQSJYUQ1jA+QLRQaGKOtRhiNPeiBjfHq5h7d+M+IbcaDtxQkgRsbdxOXhyHpO8QLjCMV6AY0hoOB1/2hDXlQqR+bIbCaFNPuhqwy1RUIEBaBqmO402BewmgNHXJUMuY4ywKTOJ77G6fIstY/nlyxusmqF4qOWKZjRT9Fe+yok3svmPf2urs7k/3ANO6uhu7ReGL6os9s6dDpXjR2WRjK8UvaBAZ33U8IQURbnsUZcJqenPU44ynlkgTAnNaW1Gq+esF8WTgnKxZnWkAcVDfaal6msQYyTUHFAl7fAwpZft85R/mb9gM="
+  access_key_id: ${AWS_ACCESS_KEY_ID}
+  secret_access_key: ${AWS_SECRET_ACCESS_KEY}
   bucket: "docs.clageug.jp"
   skip_cleanup: true
   region: ap-northeast-1
   local-dir: ./_build/html
+
+after_deploy:
+  - aws configure set preview.cloudfront true
+  - aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_DISTRIBUTION_ID} --paths "/*"
