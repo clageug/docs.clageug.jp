@@ -1,4 +1,3 @@
 Sphinx>1.3
 sphinx-autobuild>0.7.0
-commonmark
 recommonmark==0.4.0
